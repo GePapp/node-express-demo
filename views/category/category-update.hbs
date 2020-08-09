@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            Update Category
+        </div>
+    </div>
+    {{#if errors}}
+    <div class="row">
+        <div class="col s10 offset-s1 m6 offset-m1 error-msg">
+            {{#each errors}}
+            <p>* {{this.msg}}</p>
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+    <form action="/categories/{{category._id}}" method="post">
+        <div class="row">
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input name="categoryName" id="categoryName" type="text" value="{{category.categoryName}}"
+                        class="validate">
+                    <label for="categoryName">Line Name</label>
+                </div>
+            </div>
+
+            {{#if message.categoryName}}
+            <div class="row">
+                <div id="messages" class="col s12 text-left">
+                    *** Field {{message.field}}: {{message.message}}
+                </div>
+            </div>
+            {{/if}}
+
+            <div class="row">
+                <div class="input-field right-align col s12 m8">
+                    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+                    <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Update</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

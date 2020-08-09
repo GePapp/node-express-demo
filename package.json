@@ -1,0 +1,31 @@
+{
+  "name": "node-express-demo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "csurf": "^1.11.0",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.6",
+    "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.20",
+    "mongoose-aggregate-paginate-v2": "^1.0.42",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.10",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {}
+}

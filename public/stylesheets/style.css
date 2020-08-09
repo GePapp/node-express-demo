@@ -1,0 +1,166 @@
+/* home page */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: rgb(240, 240, 240);
+}
+
+main {
+    flex: 1 0 auto;
+}
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+.parallax-container .section {
+    width: 100%;
+}
+@media only screen and (max-width: 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+    #index-banner .section {
+        top: 10%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #index-banner .section {
+        top: 0;
+    }
+}
+
+/* footer */
+footer.page-footer {
+    margin: 0;
+    position: absolute;
+}
+footer.page-footer .footer-center ul li {
+    padding: 6px;
+}
+footer.page-footer .footer-icons {
+    margin-top: 30px;
+}
+footer.page-footer .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+/* --------- admin ------------------- */
+/* admin sidenav */
+.sidenav {
+    padding-top: 10px;
+    width: 200px;
+    background-color: rgb(51, 51, 51);
+    color: white !important;
+    transition: all 200ms linear;
+}
+.sidenav .user-view {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 8px;
+}
+.sidenav li:hover {
+    background-color: rgb(71, 71, 71) !important;
+}
+
+.sidenav li > a {
+    color: white !important;
+    padding-left: 20px;
+}
+.sidenav li > a > i {
+    margin: 0 4px 0 0;
+}
+
+/* auth content */
+.auth-content {
+    margin-top: 100px;
+}
+
+/* admin content */
+.admin-content {
+    margin-top: 20px;
+    margin-left: 220px;
+    transition: all 200ms linear !important;
+}
+@media only screen and (max-width: 992px) {
+    .admin-content {
+        margin-top: 20px;
+        margin-left: 0px;
+        transition: all 600ms linear !important;
+    }
+}
+
+/* admin tables */
+td {
+    border: 1px solid rgb(226, 226, 226);
+    border-collapse: collapse;
+    padding: 2px;
+}
+th {
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    font-size: 0.9rem;
+    padding: 8px;
+}
+.add-button {
+    text-align: right;
+}
+.img-table {
+    width: 60%;
+    height: 60%;
+}
+.td-buttons {
+    width: 130px;
+    text-align: right;
+}
+
+.td-buttons form {
+    display: inline;
+}
+
+/* pagination */
+.pagin-div {
+    margin-top: 30px;
+}
+
+/* admin forms */
+form {
+    margin-top: 20px;
+}
+
+/* messages output */
+.error-msg {
+    color: red;
+    font-size: 0.8rem;
+    background-color: rgb(248, 228, 228);
+    border: 1px solid rgb(255, 184, 184);
+}
+.success-msg {
+    color: rgb(12, 27, 0);
+    font-size: 0.8rem;
+    background-color: rgb(222, 255, 200);
+    border: 1px solid rgb(197, 233, 151);
+}
+.row .col {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* public pages */
+.contact-div {
+    padding-top: 60px !important;
+}

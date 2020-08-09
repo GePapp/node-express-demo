@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 m10 offset-m3">
+            Update Comic
+        </div>
+    </div>
+    {{!-- important, errors is not flash error --}}
+    {{#if errors}}
+    <div class="row">
+        <div class="col s8 offset-s2 m6 offset-m2 error-msg">
+            {{#each errors}}
+            <p>* {{this.msg}}</p>
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+    {{!-- IMPORTANT: for form enctype="multipart/form-data" put csrf in form action:  /?_csrf=...  --}}
+    <form action="/comics/{{comic._id}}/?_csrf={{csrfToken}}" method="post" enctype="multipart/form-data"
+        class="col s12">
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <input id="title" name="title" type="text" value="{{comic.title}}" class="validate">
+                <label for="title">Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">Description</div>
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <textarea id="description" name="description">{{comic.description}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="file-field input-field col s12 m6">
+                <div class="btn">
+                    <span>File</span>
+                    <input type="file" name="imagePath">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m4">
+                <select name="category">
+                    {{#select comic.category}}
+                    {{#each categories}}
+                    <option value="{{categoryName}}">{{categoryName}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                <label>Categories</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m4">
+                <select name="line">
+                    {{#select comic.line}}
+                    {{#each lines}}
+                    <option value="{{lineName}}">{{lineName}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                <label>Lines</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <input id="price" name="price" value="{{comic.price}}" type="text" class="validate">
+                <label for="price">Price</label>
+            </div>
+        </div>
+
+        <div class="row">
+            {{!-- hidden input with old image name --}}
+            <input type="hidden" name="oldImagePath" value="{{comic.imagePath}}" />
+            <div class="input-field right-align col s12 m10">
+                <button class="btn waves-effect waves-light btn-small" type="submit">Update</button>
+            </div>
+        </div>
+
+    </form>
+</div>

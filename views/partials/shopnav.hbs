@@ -1,0 +1,42 @@
+<ul id="slide-out" class="sidenav sidenav-fixed shopnav">
+    <div class="user-view">
+        <i class="fas fa-shopping-basket fa-2x"></i>S H O P
+    </div>
+    <li><a href="/shop">Show All</a></li>
+
+    {{!-- Classic collapsible (dropdown) --}}
+    <li>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header">Classic</div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/shop?line=Lucky Luke">Lucky Luke</a></li>
+                        <li><a href="/shop?line=Asterix">Asterix</a></li>
+                        <li><a href="/shop?line=Ten Ten">Ten Ten</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    {{!-- Classic collapsible (dropdown) --}}
+    <li>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header">Manga</div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#!">First Link</a></li>
+                        <li><a href="#!">Second Link</a></li>
+                        <li><a href="#!">Third Link</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+
+<a href="#" data-target="slide-out" class="sidenav-trigger" id="shopnavTrigger"><i class="fas fa-bars fa-2x"
+        style="color:dimgray;"></i></a>

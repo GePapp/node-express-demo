@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+            <table class="highlight">
+
+                <thead>
+                    <tr>
+                        <th colspan='6'>C o m i c s</th>
+                    </tr>
+
+                    <tr>
+                        <th colspan='6' class="add-button">
+                            <a href="/comics/add" class="btn btn-small">New</a>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Category/line</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each comics.docs}}
+                    <tr>
+                        <td>{{title}}</td>
+                        {{!-- render html-text for description, therfore use {{{ }}} --}}
+                        <td>{{{description}}}</td>
+                        <td>{{category}}/{{line}}</td>
+                        <td><img src='images/pages/{{imagePath}}' class="img-table"></td>
+                        <td>{{price}}</td>
+                        <td class="td-buttons">
+                            <a href="/comics/{{_id}}" class="btn btn-small orange">Upd</a>
+
+                            {{!-- IMPORTANT: csrfToken in each loop, use ../csrfToken instead csrfToken --}}
+
+                            {{!-- use method-override to be able to use form with delete or put methods --}}
+                            <form action="/comics/{{_id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_csrf" value="{{../csrfToken}}" />
+                                <button class="btn red accent-4 btn-small" type="submit">DEL</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    {{!-- pagination links --}}
+    <div class="row">
+        <div class="col s12 m12 center aligned pagin-div">
+            <a href="/comics?page={{comics.prevPage}}" class="waves-effect waves-light btn btn-small"
+                {{#unless comics.hasPrevPage}}disabled{{/unless}}>prev</a>
+            <a href="/comics?page={{comics.nextPage}}" class="waves-effect waves-light btn btn-small"
+                {{#unless comics.hasNextPage}}disabled{{/unless}}>next</a>
+        </div>
+
+    </div>
+</div>

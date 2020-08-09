@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 m10 offset-m1">
+            <table class="highlight">
+
+                <thead>
+                    <tr>
+                        <th colspan='3'>U s e r s</th>
+                    </tr>
+
+                    <tr>
+                        <th colspan='3' class="add-button">
+                            <a href="/users/signup" class="btn btn-small">New</a>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each users}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{email}}</td>
+                        <td class="td-buttons">
+                            {{!-- IMPORTANT: csrfToken in each loop, use ../csrfToken instead csrfToken --}}
+
+                            {{!-- use method-override to be ablle to use form with delete or put methods --}}
+                            <form action="/users/{{_id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_csrf" value="{{../csrfToken}}" />
+                                <button class="btn red accent-4 btn-small" type="submit">DEL</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
