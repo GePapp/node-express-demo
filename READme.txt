@@ -1,7 +1,7 @@
-Single page application (SPA) with nodejs,  noodeexpressjs, mongodb database, materialize css framework.
+Application with nodejs, noodeexpressjs, mongodb database, Materialize css framework.
 Includes nodemailer
 Handlebars view engine.
-CRUD with admin area
+CRUD with admin area.
 
 Require: 
 Nodejs (>= 12.0),
